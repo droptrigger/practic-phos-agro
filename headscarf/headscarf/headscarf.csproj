@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="models\Card.cs" />
     <Compile Include="models\Deck.cs" />
+    <Compile Include="models\Table.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

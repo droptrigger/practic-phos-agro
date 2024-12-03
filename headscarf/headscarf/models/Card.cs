@@ -7,8 +7,9 @@ namespace headscarf.models
     /// </summary>
     public class Card
     {
-        Dictionary<int, string> cardNames = new Dictionary<int, string>
+        private static readonly Dictionary<int, string> cardNames = new Dictionary<int, string>
         {
+            { 1, "ACE" },
             { 2, "DEUCE" },
             { 3, "TREY" },
             { 4, "FOUR" },
@@ -20,11 +21,10 @@ namespace headscarf.models
             { 10, "TEN" },
             { 11, "JACK" },
             { 12, "QUEEN" },
-            { 13, "KING" },
-            { 14, "ACE" }
+            { 13, "KING" }
         };
 
-        Dictionary<char, string> suitNames = new Dictionary<char, string>
+        private static readonly Dictionary<char, string> suitNames = new Dictionary<char, string>
         {
             { 'H', "HEARTS" },
             { 'D', "DIAMONDS" },
@@ -33,9 +33,12 @@ namespace headscarf.models
         };
 
         private bool _isTop = false;
-
+        private bool _isUpside = false; 
         private byte _num;
         private char _suit;
+
+        public int Num => _num;
+        public char Suit => _suit;
 
         private byte[] _position = 
         {
@@ -49,9 +52,6 @@ namespace headscarf.models
             0  // Счет
         };
 
-        public bool IsTop { get { return _isTop; } }
-        public int Num { get { return _num; } }
-        public char Type { get { return _suit; }}
         public byte[] Position { get { return _position; } }
 
 
@@ -73,8 +73,15 @@ namespace headscarf.models
             _isTop = true;
         }
 
+        public void Upside()
+        {
+            _isUpside = true;
+        }
+
         public string GetInfo()
         {
+            if (_isUpside)
+                return cardNames[_num] + " " + suitNames[_suit] + " ! IS UPSIDE";
             return cardNames[_num] + " " + suitNames[_suit];
         }
 
