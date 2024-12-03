@@ -3,11 +3,14 @@ using System.Collections.Generic;
 
 namespace headscarf.models
 {
+    /// <summary>
+    /// Класс колоды
+    /// </summary>
     public class Deck
     {
         private List<Card> _cardDeck;
 
-        public List<Card> CardDeck { get { return _cardDeck; } }
+        public List<Card> CardDeck => _cardDeck;
 
         public Deck() 
         {
@@ -29,13 +32,13 @@ namespace headscarf.models
                     _cardDeck[n] = _cardDeck[k];
                     _cardDeck[k] = temp;
                 }
-            }
+            }      
         }
 
         public List<Card> Create()
         {
             List<Card> temp = new List<Card>();
-            for (byte i = 2; i <= 14; i++)
+            for (byte i = 1; i <= 13; i++)
             {
                 for (byte j = 1; j <= 4; j++)
                 {
