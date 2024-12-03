@@ -7,7 +7,11 @@
       "RelativeMoniker": "D:0:0:{25C2B2D2-EF45-451F-864D-7081FDA97E4F}|headscarf\\headscarf.csproj|solutionrelative:headscarf\\models\\card.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{25C2B2D2-EF45-451F-864D-7081FDA97E4F}|headscarf\\headscarf.csproj|c:\\users\\vasya\\onedrive\\\u0440\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\practic-phos-agro\\headscarf\\headscarf\\models\\deck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{526BDA59-8B21-44FC-A3DE-DE0B5D6800AE}|Test\\Test.csproj|c:\\users\\vasya\\onedrive\\\u0440\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\practic-phos-agro\\headscarf\\test\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{526BDA59-8B21-44FC-A3DE-DE0B5D6800AE}|Test\\Test.csproj|solutionrelative:test\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25C2B2D2-EF45-451F-864D-7081FDA97E4F}|headscarf\\headscarf.csproj|C:\\Users\\vasya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\practic-phos-agro\\headscarf\\headscarf\\models\\deck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{25C2B2D2-EF45-451F-864D-7081FDA97E4F}|headscarf\\headscarf.csproj|solutionrelative:headscarf\\models\\deck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -18,17 +22,30 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\vasya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\practic-phos-agro\\headscarf\\Test\\Program.cs",
+              "RelativeDocumentMoniker": "Test\\Program.cs",
+              "ToolTip": "C:\\Users\\vasya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\practic-phos-agro\\headscarf\\Test\\Program.cs",
+              "RelativeToolTip": "Test\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-03T10:40:29.451Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Deck.cs",
               "DocumentMoniker": "C:\\Users\\vasya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\practic-phos-agro\\headscarf\\headscarf\\models\\Deck.cs",
               "RelativeDocumentMoniker": "headscarf\\models\\Deck.cs",
               "ToolTip": "C:\\Users\\vasya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\practic-phos-agro\\headscarf\\headscarf\\models\\Deck.cs",
               "RelativeToolTip": "headscarf\\models\\Deck.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAywBQAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAYwBQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-03T10:23:21.286Z",
               "EditorCaption": ""
@@ -41,7 +58,7 @@
               "RelativeDocumentMoniker": "headscarf\\models\\Card.cs",
               "ToolTip": "C:\\Users\\vasya\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\practic-phos-agro\\headscarf\\headscarf\\models\\Card.cs",
               "RelativeToolTip": "headscarf\\models\\Card.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAQAAAAQAAAAAAAAAA==",
+              "ViewState": "AgIAAEMAAAAAAAAAAAAQwFAAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-03T09:46:44.884Z",
               "EditorCaption": ""
