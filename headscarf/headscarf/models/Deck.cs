@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace headscarf.models
 {
@@ -16,7 +17,19 @@ namespace headscarf.models
 
         public void Shuffle()
         {
-            // TODO: Make shuffle
+            Random rng = new Random();
+
+            for (int i = 0; i <= 3; i++)
+            {
+                int n = _cardDeck.Count;
+                while (n > 1)
+                {
+                    int k = rng.Next(n--);
+                    Card temp = _cardDeck[n];
+                    _cardDeck[n] = _cardDeck[k];
+                    _cardDeck[k] = temp;
+                }
+            }
         }
 
         public List<Card> Create()
@@ -42,6 +55,18 @@ namespace headscarf.models
                     }
                 }
             }
+            return temp;
+        }
+
+        public string GetString()
+        {
+            string temp = "";
+
+            for (int i = 0; i < _cardDeck.Count; i++)
+            {
+                temp += _cardDeck[i].GetInfo() + "\n";
+            }
+
             return temp;
         }
     }
