@@ -1,5 +1,7 @@
 Test/
 HeadscarfApp/
+bin/
+obj/
 
 # Visual Studio
 .vs/
