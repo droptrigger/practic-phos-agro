@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using universitycollege.solitaire.data;
 
 namespace universitycollege.solitaire.model
 {
@@ -47,9 +48,9 @@ namespace universitycollege.solitaire.model
         /// </summary>
         public void CreateDefaultDesk()
         {
-            for (byte denominatorOfCard = (int)Card.CardNamesEnum.MIN; denominatorOfCard <= (int)Card.CardNamesEnum.MAX; denominatorOfCard++)
+            for (byte denominatorOfCard = (int)InMemory.CardNamesEnum.MIN; denominatorOfCard <= (int)InMemory.CardNamesEnum.MAX; denominatorOfCard++)
             {
-                for (byte suit = 1; suit <= (int)Card.SuitNamesEnum.COUNT; suit++)
+                for (byte suit = 1; suit <= (int)InMemory.SuitNamesEnum.COUNT; suit++)
                 {
                     switch (suit) {
                         case 1:
