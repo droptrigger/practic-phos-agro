@@ -1,6 +1,0 @@
-C:\Users\vasya\OneDrive\Рабочий стол\practic-phos-agro\headscarf\headscarf\bin\Debug\headscarf.dll
-C:\Users\vasya\OneDrive\Рабочий стол\practic-phos-agro\headscarf\headscarf\bin\Debug\headscarf.pdb
-C:\Users\vasya\OneDrive\Рабочий стол\practic-phos-agro\headscarf\headscarf\obj\Debug\headscarf.csproj.AssemblyReference.cache
-C:\Users\vasya\OneDrive\Рабочий стол\practic-phos-agro\headscarf\headscarf\obj\Debug\headscarf.csproj.CoreCompileInputs.cache
-C:\Users\vasya\OneDrive\Рабочий стол\practic-phos-agro\headscarf\headscarf\obj\Debug\headscarf.dll
-C:\Users\vasya\OneDrive\Рабочий стол\practic-phos-agro\headscarf\headscarf\obj\Debug\headscarf.pdb
