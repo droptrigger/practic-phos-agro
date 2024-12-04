@@ -1,8 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
-namespace headscarf.models
+namespace universitycollege.solitaire.model
 {
+    /// <summary>
+    /// Table class
+    /// </summary>
     public class Table
     {
         private Deck _tableDeck;
@@ -16,43 +18,56 @@ namespace headscarf.models
 
         public List<List<Card>> TableCards => _tableCards;
 
+        public Table(Deck deck)
+        {
+            InitializeTable(deck);
+        }
+
         public void InitializeTable(Deck deck)
         {
             TableDeck = deck;
+            byte CountCardOfRow = 0;
 
-            for (byte i = 1; i <= 8; i++)
+            for (byte NumberOfRow = 1; NumberOfRow <= 8; NumberOfRow++)
             {
-                byte n = 0;
+                byte NumberOfColumn = 0;
+                CountCardOfRow++;
                 List<Card> TempCards = new List<Card>();
 
-                while (n < i)
+                for (NumberOfColumn = 0; NumberOfColumn < CountCardOfRow; NumberOfColumn++)
                 {
-                    if (n == i - 1)
-                        TableDeck.CardDeck[n].Upside();
+                    if (NumberOfColumn == CountCardOfRow - 1)
+                    {
+                        TableDeck.CardDeck[NumberOfColumn].Upside();
+                    }
 
-                    TempCards.Add(TableDeck.CardDeck[n]);
-                    TableDeck.CardDeck.RemoveAt(n);
-                    n++;
+                    TempCards.Add(TableDeck.CardDeck[NumberOfColumn]);
+                    TableDeck.CardDeck.RemoveAt(NumberOfColumn);
+                    NumberOfColumn++;
                 }
 
                 _tableCards.Add(TempCards);
             }
+
+            // Update main deck of card
+            deck.CardDeck = TableDeck.CardDeck;
         }
 
-        public string GetTable()
+        public override string ToString()
         {
-            string temp = "";
+            string StringTable = "";
 
             foreach (List<Card> card in TableCards)
             {
                 for (int i = 0; i < card.Count; i++)
                 {
-                    temp += card[i].GetInfo() + "\n";
+                    StringTable += card[i].ToString() + "\n";
                 }
-                temp += "\n";
+                StringTable += "\n";
             }
 
-            return temp;
+            return StringTable;
         }
+
     }
 }

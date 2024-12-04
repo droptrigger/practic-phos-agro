@@ -1,89 +1,77 @@
-﻿using System.Collections.Generic;
+﻿using universitycollege.solitaire.data;
+using System;
 
-namespace headscarf.models
+namespace universitycollege.solitaire.model
 {
     /// <summary>
-    /// Класс карт
+    /// Card class
     /// </summary>
     public class Card
     {
-        private static readonly Dictionary<int, string> cardNames = new Dictionary<int, string>
+        public enum CardNamesEnum
         {
-            { 1, "ACE" },
-            { 2, "DEUCE" },
-            { 3, "TREY" },
-            { 4, "FOUR" },
-            { 5, "FIVE" },
-            { 6, "SIX" },
-            { 7, "SEVEN" },
-            { 8, "EIGHT" },
-            { 9, "NINE" },
-            { 10, "TEN" },
-            { 11, "JACK" },
-            { 12, "QUEEN" },
-            { 13, "KING" }
-        };
-
-        private static readonly Dictionary<char, string> suitNames = new Dictionary<char, string>
+            DEUCE = 2,
+            TREY = 3,
+            FOUR = 4,
+            FIVE = 5,
+            SIX = 6,
+            SEVEN = 7,
+            EIGHT = 8,
+            NINE = 9,
+            TEN = 10,
+            JACK = 11,
+            QUEEN = 12,
+            KING = 13, 
+            ACE = 14
+        }
+ 
+        public enum SuitNamesEnum
         {
-            { 'H', "HEARTS" },
-            { 'D', "DIAMONDS" },
-            { 'S', "SPADES" },
-            { 'C', "CLUBS" }
-        };
+            HEARTS = 1,
+            DIAMONDS = 2,
+            SPADES = 3,
+            CLUBS = 4,
+            COUNT = 4
+        }
 
-        private bool _isTop = false;
-        private bool _isUpside = false; 
-        private byte _num;
+        private bool _isUpside = false;
+        private byte _denominatorOfCard;
         private char _suit;
 
-        public int Num => _num;
+        public int DenominatorOfCard => _denominatorOfCard;
         public char Suit => _suit;
 
-        private byte[] _position = 
+        
+        public Card(byte denminator, char suit)
         {
-            0, // Столбец
-            0  // Строка
-        };
+            if (denminator < (int)CardNamesEnum.DEUCE || denminator > (int)CardNamesEnum.ACE)
+            {
+                throw new Exception("Mistake! There is no such card.");
+            }
 
-        private byte[] _topPosition = 
-        { 
-            0, // Столбец
-            0  // Счет
-        };
-
-        public byte[] Position { get { return _position; } }
-
-
-        public Card(byte num, char suit)
-        {
-            _num = num;
+            _denominatorOfCard = denminator;
             _suit = suit;
         }
 
-        public void UpdatePosition(byte row, byte col) 
-        {
-            _position[0] = row;
-            _position[1] = col;
-        }
-
-        public void UpdateTopPosition(byte position)
-        {
-            _topPosition[1] = position;
-            _isTop = true;
-        }
-
+        /// <summary>
+        /// The method that turns the card over on the table
+        /// </summary>
         public void Upside()
         {
-            _isUpside = true;
+            _isUpside = !_isUpside;
         }
 
-        public string GetInfo()
+        public override string ToString()
         {
             if (_isUpside)
-                return cardNames[_num] + " " + suitNames[_suit] + " ! IS UPSIDE";
-            return cardNames[_num] + " " + suitNames[_suit];
-        }
+            {
+                return InMemory.CardNames[_denominatorOfCard] + " " + InMemory.SuitNames[_suit] + " ! IS UPSIDE";
+            }
 
+            else
+            {
+                return InMemory.CardNames[_denominatorOfCard] + " " + InMemory.SuitNames[_suit];
+            }
+        }
     }
 }
