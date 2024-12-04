@@ -1,76 +1,86 @@
-﻿using System;
+﻿using universitycollege.solitaire.model;
+using System;
 using System.Collections.Generic;
 
-namespace headscarf.models
+namespace universitycollege.solitaire.model
 {
     /// <summary>
-    /// Класс колоды
+    /// Deck class
     /// </summary>
     public class Deck
     {
-        private List<Card> _cardDeck;
+        private List<Card> _cardDeck = new List<Card>();
 
-        public List<Card> CardDeck => _cardDeck;
-
-        public Deck() 
+        public List<Card> CardDeck
         {
-            _cardDeck = Create();
-            this.Shuffle();
+            get { return _cardDeck; }
+            set { _cardDeck = value; }
         }
 
-        public void Shuffle()
+        public Deck(int ShuffleCount) 
         {
-            Random rng = new Random();
+            CreateDefaultDesk();
+            this.Shuffle(ShuffleCount);
+        }
 
-            for (int i = 0; i <= 3; i++)
+        /// <summary>
+        /// A method for shuffling cards
+        /// </summary>
+        /// <param name="ShuffleCount">Number of complete shuffles (54) of the deck</param>
+        public void Shuffle(int ShuffleCount)
+        {
+            Random rnd = new Random();
+
+            for (int countShuffle = 0; countShuffle < ShuffleCount; countShuffle++)
             {
-                int n = _cardDeck.Count;
-                while (n > 1)
+                for (int countCard = _cardDeck.Count - 1; countCard >= 0; countCard--)
                 {
-                    int k = rng.Next(n--);
-                    Card temp = _cardDeck[n];
-                    _cardDeck[n] = _cardDeck[k];
-                    _cardDeck[k] = temp;
+                    int RandomNumber = rnd.Next(countCard);
+                    Card temp = _cardDeck[countCard];
+                    _cardDeck[countCard] = _cardDeck[RandomNumber];
+                    _cardDeck[RandomNumber] = temp;
                 }
-            }      
+            }
         }
 
-        public List<Card> Create()
+        /// <summary>
+        /// Сreating a base deck where all the denominators of the suit go sequentially in order
+        /// </summary>
+        public void CreateDefaultDesk()
         {
-            List<Card> temp = new List<Card>();
-            for (byte i = 1; i <= 13; i++)
+            for (byte denominatorOfCard = (int)Card.CardNamesEnum.DEUCE; denominatorOfCard <= (int)Card.CardNamesEnum.ACE; denominatorOfCard++)
             {
-                for (byte j = 1; j <= 4; j++)
+                for (byte suit = 1; suit <= (int)Card.SuitNamesEnum.COUNT; suit++)
                 {
-                    switch (j) {
+                    switch (suit) {
                         case 1:
-                            temp.Add(new Card(i, 'H'));
+                            _cardDeck.Add(new Card(denominatorOfCard, 'H')); 
                             break;
                         case 2:
-                            temp.Add(new Card(i, 'D'));
+                            _cardDeck.Add(new Card(denominatorOfCard, 'D'));
                             break;
                         case 3:
-                            temp.Add(new Card(i, 'S'));
+                            _cardDeck.Add(new Card(denominatorOfCard, 'S'));
                             break;
                         case 4:
-                            temp.Add(new Card(i, 'C'));
+                            _cardDeck.Add(new Card(denominatorOfCard, 'C'));
                             break;
                     }
                 }
             }
-            return temp;
         }
 
-        public string GetString()
+        public override string ToString()
         {
-            string temp = "";
+            string StringDesk = "";
 
             for (int i = 0; i < _cardDeck.Count; i++)
             {
-                temp += _cardDeck[i].GetInfo() + "\n";
+                StringDesk += $"{_cardDeck[i].ToString()}\n";
             }
 
-            return temp;
+            return StringDesk;
         }
+
     }
 }
