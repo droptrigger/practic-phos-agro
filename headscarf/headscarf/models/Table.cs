@@ -23,6 +23,10 @@ namespace universitycollege.solitaire.model
             InitializeTable(deck);
         }
 
+        /// <summary>
+        /// Laying out cards on the table from the deck
+        /// </summary>
+        /// <param name="deck">Link to the deck, after splitting, the cards will be removed from there</param>
         public void InitializeTable(Deck deck)
         {
             TableDeck = deck;
@@ -30,11 +34,10 @@ namespace universitycollege.solitaire.model
 
             for (byte NumberOfRow = 1; NumberOfRow <= 8; NumberOfRow++)
             {
-                byte NumberOfColumn = 0;
                 CountCardOfRow++;
                 List<Card> TempCards = new List<Card>();
 
-                for (NumberOfColumn = 0; NumberOfColumn < CountCardOfRow; NumberOfColumn++)
+                for (byte NumberOfColumn = 0; NumberOfColumn < CountCardOfRow; NumberOfColumn++)
                 {
                     if (NumberOfColumn == CountCardOfRow - 1)
                     {
@@ -43,7 +46,6 @@ namespace universitycollege.solitaire.model
 
                     TempCards.Add(TableDeck.CardDeck[NumberOfColumn]);
                     TableDeck.CardDeck.RemoveAt(NumberOfColumn);
-                    NumberOfColumn++;
                 }
 
                 _tableCards.Add(TempCards);
