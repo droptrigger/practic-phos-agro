@@ -10,6 +10,9 @@ namespace universitycollege.solitaire.model
     {
         public enum CardNamesEnum
         {
+            MIN = 2,
+            MAX = 14, 
+
             DEUCE = 2,
             TREY = 3,
             FOUR = 4,
@@ -31,6 +34,7 @@ namespace universitycollege.solitaire.model
             DIAMONDS = 2,
             SPADES = 3,
             CLUBS = 4,
+
             COUNT = 4
         }
 
@@ -44,7 +48,7 @@ namespace universitycollege.solitaire.model
         
         public Card(byte denminator, char suit)
         {
-            if (denminator < (int)CardNamesEnum.DEUCE || denminator > (int)CardNamesEnum.ACE)
+            if (denminator < (int)CardNamesEnum.MIN || denminator > (int)CardNamesEnum.MAX)
             {
                 throw new Exception("Mistake! There is no such card.");
             }
